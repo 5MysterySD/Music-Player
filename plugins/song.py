@@ -40,7 +40,7 @@ def a(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply('⏳`Searching... Please Wait...`⏳')
+    m = message.reply('⚙`Searching... Please Wait...`⚙')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -94,7 +94,7 @@ def a(client, message):
         m.delete()
         message.delete()
     except Exception as e:
-        m.edit('**An Error Occured. Please Report This To @SafoTheBot !!**')
+        m.edit('**An Error Occured. Try Again !!**')
         print(e)
     try:
         os.remove(audio_file)
