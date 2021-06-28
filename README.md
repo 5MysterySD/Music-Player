@@ -1,4 +1,4 @@
-# Telegram Radio Player
+# Telegram Radio & Music Player 24*7
 
 An Telegram Bot to Play Radio/Music in Channel or Group Voice Chats.
 
@@ -16,7 +16,7 @@ Radio in [AsmSafone](https://t.me/AsmSafone) Channel & Music in [SafoTheBot](htt
 
 ## Deploy to Heroku (The Easy Way)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/AsmSafone/RadioPlayerV2)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/5MysterySD/Music-Player)
 
 ## Heroku Vars:
 1. `API_ID` : Get From my.telegram.org
@@ -79,4 +79,3 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>
 ```
-## Credits
