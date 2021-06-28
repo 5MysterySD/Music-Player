@@ -22,18 +22,18 @@ from pyrogram import Client, filters
 
 
 
-HOME_TEXT = "👋🏻 **Hi [{}](tg://user?id={})**,\n\nI'm **Radio & Music Player Bot** \nI Can Play Radio/Stream Music In Channels & Groups 24x7 Nonstop. Modified with ❤️ By @Mystery!"
-HELP = """🏷️ **Need Help?** 🤔
+HOME_TEXT = "👋🏻 **Hey [{}](tg://user?id={})**,\n\nI'm **Radio & Music Player Bot** \nI Can Play Radio/Stream Music In Channels & Groups 24x7 Nonstop. Modified with ❤️ By @Mystery!"
+HELP = """🔍 **Need Help?** 🤔
 __(Join @MF_Support For Support)__
 
-🏷️ **Common Commands**:
+🔍 **Common Commands For You**:
 \u2022 `/play` reply to an audio to play or queue it
 \u2022 `/help` shows help for commands
 \u2022 `/playlist` shows the playlist
 \u2022 `/current` shows playing time of current track
 \u2022 `/song` [song name] download the song as audio
 
-🏷️ **Admin Commands**:
+🔍 **Admin Commands [Not For You . ]**:
 \u2022 `/skip` [n] skip current or n where n >= 2
 \u2022 `/join` join voice chat of current group
 \u2022 `/leave` leave current voice chat
@@ -49,7 +49,7 @@ __(Join @MF_Support For Support)__
 \u2022 `/unmute` unmute the VC userbot
 \u2022 `/restart` restart the bot
 
-🏷️ **👨‍💻Developer👨‍💻: @MysterySD** 🧛
+💥 **👨‍💻DEV👨‍💻: @MysterySD** 🧛
 """
 
 
@@ -57,8 +57,8 @@ __(Join @MF_Support For Support)__
 async def start(client, message):
     buttons = [
         [
-        InlineKeyboardButton('CHANNEL', url='https://t.me/Infyplex'),
-        InlineKeyboardButton('SUPPORT', url='https://t.me/MF_Support'),
+        InlineKeyboardButton('📑CHANNEL📑', url='https://t.me/Infyplex'),
+        InlineKeyboardButton('☎️SUPPORT☎️', url='https://t.me/MF_Support'),
     ],
     [
         InlineKeyboardButton('🎯 HELP 🎯', callback_data='help'),
