@@ -22,34 +22,34 @@ from pyrogram import Client, filters
 
 
 
-HOME_TEXT = "👋🏻 **Hey [{}](tg://user?id={})**,\n\nI'm **Radio & Music Player Bot** \nI Can Play Radio/Stream Music In Channels & Groups 24x7 Nonstop. Modified with ❤️ By @Mystery!"
-HELP = """🔍 **Need Help?** 🤔
-__(Join @MF_Support For Support)__
-
-🔍 **Common Commands For You**:
-\u2022 `/play` reply to an audio to play or queue it
-\u2022 `/help` shows help for commands
-\u2022 `/playlist` shows the playlist
-\u2022 `/current` shows playing time of current track
-\u2022 `/song` [song name] download the song as audio
-
-🔍 **Admin Commands [Not For You . ]**:
-\u2022 `/skip` [n] skip current or n where n >= 2
-\u2022 `/join` join voice chat of current group
-\u2022 `/leave` leave current voice chat
-\u2022 `/vc` check which VC is joined
-\u2022 `/stop` stop playing music
-\u2022 `/radio` start radio stream
-\u2022 `/stopradio` stop radio stream
-\u2022 `/replay` play from the beginning
-\u2022 `/clean` remove unused RAW PCM files
-\u2022 `/pause` pause playing music
-\u2022 `/resume` resume playing music
-\u2022 `/mute` mute the VC userbot
-\u2022 `/unmute` unmute the VC userbot
-\u2022 `/restart` restart the bot
-
-💥 **👨‍💻DEV👨‍💻: @MysterySD** 🧛
+HOME_TEXT = "👋🏻 **Hey [{}](tg://user?id={})**,\n\nI'm **Radio & Music Player Bot** \nI Can Play Radio/Stream Music In Channels & Groups 24x7 Nonstop. \nModified with ❤️ By @MysterySD!"
+HELP = """ ╭───「🔍 **<i>HELP GUIDE</i>** 」
+ │
+ ├🔍 **Common Commands For You**:
+ ├\u2022 `/play` reply to an audio to play or queue it
+ ├\u2022 `/help` shows help for commands
+ ├\u2022 `/playlist` shows the playlist
+ ├\u2022 `/current` shows playing time of current track
+ ├\u2022 `/song` [song name] download the song as audio
+ │
+ ├🔍 **Admin Commands [⚠️Not For You⚠️]**:
+ ├\u2022 `/skip` [n] skip current or n where n >= 2
+ ├\u2022 `/join` join voice chat of current group
+ ├\u2022 `/leave` leave current voice chat
+ ├\u2022 `/vc` check which VC is joined
+ ├\u2022 `/stop` stop playing music
+ ├\u2022 `/radio` start radio stream
+ ├\u2022 `/stopradio` stop radio stream
+ ├\u2022 `/replay` play from the beginning
+ ├\u2022 `/clean` remove unused RAW PCM files
+ ├\u2022 `/pause` pause playing music
+ ├\u2022 `/resume` resume playing music
+ ├\u2022 `/mute` mute the VC userbot
+ ├\u2022 `/unmute` unmute the VC userbot
+ ├\u2022 `/restart` restart the bot
+ │
+ ├💥 **👨‍💻DEV👨‍💻: @MysterySD** 🧛
+ ╰──「 ⚡<i> @Infyplex </i>⚡ 」
 """
 
 
