@@ -59,7 +59,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton("🔄", callback_data="replay"),
                             InlineKeyboardButton("⏸", callback_data="pause"),
                             InlineKeyboardButton("⏭", callback_data="skip")
-                            
+
                         ],
                     ]
                 )
@@ -87,13 +87,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton("🔄", callback_data="replay"),
                             InlineKeyboardButton("▶️", callback_data="resume"),
                             InlineKeyboardButton("⏭", callback_data="skip")
-                            
+
                         ],
                     ]
                 )
             )
 
-    
+
     elif query.data == "resume":
         mp.group_call.resume_playout()
         playlist=mp.playlist
@@ -115,7 +115,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton("🔄", callback_data="replay"),
                             InlineKeyboardButton("⏸", callback_data="pause"),
                             InlineKeyboardButton("⏭", callback_data="skip")
-                            
+
                         ],
                     ]
                 )
@@ -144,7 +144,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         InlineKeyboardButton("🔄", callback_data="replay"),
                         InlineKeyboardButton("⏸", callback_data="pause"),
                         InlineKeyboardButton("⏭", callback_data="skip")
-                            
+
                     ],
                 ]
             )
@@ -161,7 +161,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ]
             )
         )
-        
+
     elif query.data=="close":
         await query.message.delete()
 

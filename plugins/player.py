@@ -32,10 +32,7 @@ LOG_GROUP=Config.LOG_GROUP
 
 async def current_vc_filter(_, __, m: Message):
     group_call = mp.group_call
-    if group_call.is_connected:
-        return True
-    else:
-        return False
+    return bool(group_call.is_connected)
 
 
 current_vc = filters.create(current_vc_filter)
@@ -115,7 +112,7 @@ async def show_current_playing_time(_, m: Message):
 			InlineKeyboardButton("🔄", callback_data="replay"),
 			InlineKeyboardButton("⏸", callback_data="pause"),
 			InlineKeyboardButton("⏭", callback_data="skip")
-                
+
                 ],
 
 			]
@@ -127,18 +124,19 @@ async def skip_track(_, m: Message):
     playlist = mp.playlist
     if len(m.command) == 1:
         await mp.skip_current_playing()
-        playlist = mp.playlist
-        if not playlist:
-            pl = f"{emoji.NO_ENTRY} **Empty Playlist!**"
-        else:
-            if len(playlist) == 1:
-                pl = f"{emoji.REPEAT_SINGLE_BUTTON} **Playlist**:\n"
-            else:
-                pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n"
+        if playlist := mp.playlist:
+            pl = (
+                f"{emoji.REPEAT_SINGLE_BUTTON} **Playlist**:\n"
+                if len(playlist) == 1
+                else f"{emoji.PLAY_BUTTON} **Playlist**:\n"
+            )
+
             pl += "\n".join([
                 f"**{i}**. **{x.audio.title}**"
                 for i, x in enumerate(playlist)
                 ])
+        else:
+            pl = f"{emoji.NO_ENTRY} **Empty Playlist!**"
         await m.reply_text(pl)
     else:
         try:
@@ -198,7 +196,7 @@ async def leave_voice_chat(_, m: Message):
 async def list_voice_chat(client, m: Message):
     group_call = mp.group_call
     if group_call.is_connected:
-        chat_id = int("-100" + str(group_call.full_chat.id))
+        chat_id = int(f"-100{str(group_call.full_chat.id)}")
         chat = await client.get_chat(chat_id)
         await m.reply_text(
             f"{emoji.MUSICAL_NOTES} **Currently Joined In**:\n"
@@ -288,16 +286,17 @@ async def unmute(_, m: Message):
 
 @Client.on_message(filters.command("playlist"))
 async def playlist(_, m: Message):
-    playlist = mp.playlist
-    if not playlist:
-        pl = f"{emoji.NO_ENTRY} **Empty Playlist!**"
-    else:
-        if len(playlist) == 1:
-            pl = f"{emoji.REPEAT_SINGLE_BUTTON} **Playlist**:\n"
-        else:
-            pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n"
+    if playlist := mp.playlist:
+        pl = (
+            f"{emoji.REPEAT_SINGLE_BUTTON} **Playlist**:\n"
+            if len(playlist) == 1
+            else f"{emoji.PLAY_BUTTON} **Playlist**:\n"
+        )
+
         pl += "\n".join([
             f"**{i}**. **{x.audio.title}**"
             for i, x in enumerate(playlist)
             ])
+    else:
+        pl = f"{emoji.NO_ENTRY} **Empty Playlist!**"
     await m.reply_text(pl)
